@@ -10,7 +10,7 @@ public class ReadContacts {
     public static void main(String[] args) {
 
         try {
-            List<String> contents = Files.readAllLines(Paths.get("data/®", "contacts.txt"));
+            List<String> contents = Files.readAllLines(Paths.get("data/", "contacts.txt"));
             System.out.println(contents.toString());
         } catch (Exception e) {
             e.printStackTrace();
