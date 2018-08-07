@@ -1,6 +1,12 @@
 import java.util.List;
+import java.util.Scanner;
 
+// Class DOES contain methods. But methods are only superficial and used to display app to user//
 public class Menu extends Contacts {
+
+
+    Scanner scan = new Scanner(System.in);
+
     public void showMenu() {
         System.out.println("1. View Contacts");
         System.out.println("2. Add New Contact");
@@ -14,4 +20,15 @@ public class Menu extends Contacts {
         List<String> contacts = getAllContacts();
         System.out.println(contacts.toString());
     }
+
+    public void addNewContact() {
+        System.out.println("Enter a new name");
+        setNewContactName(scan.nextLine());
+        System.out.println("Enter a new contact number");
+        setNewContactNumber(scan.nextLine());
+
+        writeNewContact();
+    }
+
+
 }
