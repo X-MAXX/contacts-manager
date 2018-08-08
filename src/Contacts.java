@@ -74,4 +74,14 @@ public class Contacts {
             count++;
         }
     }
+
+    public boolean isInt(String input) {
+        try {
+            Integer.parseInt(input);
+        } catch (Exception e) {
+            System.out.println("Not an integer");
+            return false;
+        }
+        return Integer.parseInt(input) >= 1 && Integer.parseInt(input) <= 5;
+    }
 }
