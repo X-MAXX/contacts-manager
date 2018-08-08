@@ -10,13 +10,6 @@ public class Contacts {
     private HashMap<String, String> contacts = new HashMap<>();
     private String newContactName;
     private String newContactNumber;
-    public String contactNumber;
-
-
-    public String getNewContactNumber(){
-        return newContactNumber;
-    }
-
 
     public void setNewContactName(String newContactName) {
         this.newContactName = newContactName;
@@ -60,8 +53,6 @@ public class Contacts {
 
     public String formatNumber(String num) {
           return num.substring(0,3) + "-" + num.substring(3,6) + "-" + num.substring(6);
-
-
     }
 
     public void deleteContact(String contact)  {

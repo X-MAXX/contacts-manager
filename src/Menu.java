@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -19,8 +17,6 @@ public class Menu extends Contacts {
     }
 
     public void viewContacts() {
-
-
         for (Map.Entry<String, String> contact : getContacts().entrySet()) {
             System.out.printf("Name: %-25s | Phone Number: %-10s%n", contact.getKey(), formatNumber(contact.getValue()));
         }
