@@ -19,10 +19,10 @@ public class Menu extends Contacts {
     }
 
     public void viewContacts() {
-        HashMap<String, String> all = getContacts();
 
-        for (Map.Entry<String, String> contact : all.entrySet()) {
-            System.out.printf("Name: %-15s | Phone Number: %-10s%n", contact.getKey(), contact.getValue());
+
+        for (Map.Entry<String, String> contact : getContacts().entrySet()) {
+            System.out.printf("Name: %-25s | Phone Number: %-10s%n", contact.getKey(), formatNumber(contact.getValue()));
         }
     }
 
