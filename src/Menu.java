@@ -35,8 +35,15 @@ public class Menu extends Contacts {
     }
 
     public void searchContactByName() {
-        setContacts();
+        //setContacts();
         System.out.println("Enter the name of the contact you want to search");
         System.out.println(searchContact(scan.nextLine()));
+    }
+
+    public void deleteExistingContact(){
+        setContacts();
+        System.out.println("Enter the name of the contact you would like to |DELETE|");
+        deleteContact(scan.nextLine());
+
     }
 }

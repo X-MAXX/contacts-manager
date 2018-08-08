@@ -1,14 +1,19 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
+import java.util.Map;
 
 //This class is currently running our functionality. i.e. Methods, Logic, I/O, etc//
 public class Contacts {
     private HashMap<String, String> contacts = new HashMap<>();
     private String newContactName;
     private String newContactNumber;
+
+
 
     public void setNewContactName(String newContactName) {
         this.newContactName = newContactName;
@@ -50,10 +55,33 @@ public class Contacts {
         }
     }
 
+
     public String searchContact(String contact) {
         if (contacts.containsKey(contact)) {
             return "Name " + contact + " | Phone Number: " + contacts.get(contact);
         }
         return "Not found";
+    }
+
+    public void deleteContact(String contact){
+        contacts.remove(contact);
+
+        System.out.println(contacts);
+
+        /*try {
+            write.write(contacts.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+        /*for (Map.Entry<String, String> line : contacts.entrySet()) {
+            try {
+                String c = (line.getKey() +"="+ line.getValue());
+                write.write(c);
+                //Files.write(Paths.get("data/", "contacts.txt"), c.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }*/
     }
 }
