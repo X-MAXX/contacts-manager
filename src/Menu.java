@@ -1,9 +1,10 @@
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 // Class DOES contain methods. But methods are only superficial and used to display app to user//
 public class Menu extends Contacts {
-
 
     Scanner scan = new Scanner(System.in);
 
@@ -17,8 +18,11 @@ public class Menu extends Contacts {
     }
 
     public void viewContacts() {
-        List<String> contacts = getAllContacts();
-        System.out.println(contacts.toString());
+        HashMap<String, String> all = getContacts();
+
+        for (Map.Entry<String, String> contact : all.entrySet()) {
+            System.out.printf("Name: %s | Phone Number: %s\n", contact.getKey(), contact.getValue());
+        }
     }
 
     public void addNewContact() {
@@ -30,5 +34,9 @@ public class Menu extends Contacts {
         writeNewContact();
     }
 
-
+    public void searchContactByName() {
+        setContacts();
+        System.out.println("Enter the name of the contact you want to search");
+        System.out.println(searchContact(scan.nextLine()));
+    }
 }
